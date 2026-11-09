@@ -1,0 +1,1253 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tanvir Hossain | Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #f8f8f5;
+  --white: #fff;
+  --ink: #20211f;
+  --muted: #777b75;
+  --line: #e7e9e3;
+  --mint: #eaf3ed;
+  --green: #31795e;
+  --serif: "Playfair Display", Georgia, serif;
+  --sans: "DM Sans", Arial, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font: inherit;
+}
+
+.layout {
+  max-width: 1260px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 205px 1fr;
+  gap: 54px;
+  padding: 0 42px;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  padding: 34px 0;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--line);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 55px;
+}
+
+.brand-mark {
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: white;
+  display: grid;
+  place-items: center;
+  font-family: var(--serif);
+}
+
+.brand-name {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.brand-name span {
+  display: block;
+  font-size: 10px;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.side-label {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #999;
+  margin: 0 0 14px 9px;
+  text-transform: uppercase;
+}
+
+.nav {
+  display: grid;
+  gap: 5px;
+}
+
+.nav a {
+  padding: 9px 11px;
+  border-radius: 8px;
+  color: var(--muted);
+  font-size: 12px;
+  transition: .3s;
+}
+
+.nav a:hover,
+.nav a.active {
+  background: var(--mint);
+  color: var(--green);
+}
+
+.nav .num {
+  margin-right: 12px;
+  font-size: 9px;
+}
+
+.side-bottom {
+  margin-top: auto;
+}
+
+.social-row {
+  display: flex;
+  gap: 9px;
+  margin: 0 0 18px 8px;
+}
+
+.social-row a {
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 11px;
+}
+
+.availability {
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background: #5eaa7b;
+  border-radius: 50%;
+  margin-right: 7px;
+}
+
+/* MAIN */
+
+main {
+  min-width: 0;
+}
+
+.mobile-top,
+.mobile-nav {
+  display: none;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 660px;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: center;
+  gap: 42px;
+  padding: 65px 0;
+}
+
+.eyebrow {
+  color: var(--green);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font: 600 clamp(42px, 5.5vw, 72px)/1.06 var(--serif);
+  letter-spacing: -2px;
+  margin-bottom: 18px;
+}
+
+h1 span {
+  color: #8c9d91;
+}
+
+.hero-lead {
+  font: 500 19px/1.5 var(--serif);
+  color: #626a63;
+  margin-bottom: 17px;
+}
+
+.hero-copy {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 27px;
+  max-width: 445px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 17px;
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  transition: .3s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn-dark {
+  background: var(--ink);
+  color: white;
+}
+
+.btn-light {
+  border: 1px solid var(--line);
+}
+
+.portrait-wrap {
+  max-width: 355px;
+  width: 100%;
+  justify-self: end;
+  position: relative;
+}
+
+.portrait-frame {
+  height: 420px;
+  background: #dce9df;
+  padding: 10px;
+  transform: rotate(1.5deg);
+  box-shadow: 0 18px 55px rgba(35,48,39,.07);
+}
+
+.portrait-inner {
+  height: 100%;
+  overflow: hidden;
+  background: #c7d5cb;
+}
+
+.portrait-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+}
+
+.portrait-note {
+  position: absolute;
+  bottom: -24px;
+  left: -36px;
+  background: white;
+  padding: 13px 17px;
+  font: italic 12px var(--serif);
+  box-shadow: 0 10px 35px #00000010;
+}
+
+/* SECTIONS */
+
+.section {
+  padding: 76px 0;
+  border-top: 1px solid var(--line);
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.section-kicker {
+  color: var(--green);
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+h2 {
+  font: 600 clamp(29px, 3.4vw, 43px)/1.15 var(--serif);
+}
+
+.section-sub {
+  color: var(--muted);
+  font-size: 12px;
+  max-width: 350px;
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1.4fr .6fr;
+  gap: 55px;
+}
+
+.intro-text {
+  font-size: 13px;
+  color: #666d66;
+}
+
+.intro-text p {
+  margin-bottom: 15px;
+}
+
+.quote {
+  font: italic 19px/1.5 var(--serif);
+  color: #7d8d80;
+  border-left: 2px solid #b6cbb9;
+  padding-left: 18px;
+}
+
+/* CARDS */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 15px;
+}
+
+.card {
+  background: var(--mint);
+  border-radius: 10px;
+  padding: 23px 21px;
+  min-height: 190px;
+  transition: .3s;
+  position: relative;
+}
+
+.card:nth-child(2) {
+  background: #f4eeeb;
+}
+
+.card:nth-child(3) {
+  background: #eef0f4;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px #00000010;
+}
+
+.card-icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: white;
+  display: grid;
+  place-items: center;
+  color: var(--green);
+  margin-bottom: 22px;
+}
+
+.card h3 {
+  font: 600 19px var(--serif);
+  margin-bottom: 8px;
+}
+
+.card p {
+  font-size: 11px;
+  color: #727a72;
+}
+
+.card-index {
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  font-size: 9px;
+  color: #999;
+}
+
+/* SKILLS */
+
+.skills-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 38px;
+}
+
+.skill-group {
+  padding: 17px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.skill-title {
+  font: 600 16px var(--serif);
+  margin-bottom: 12px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  font-size: 10px;
+  color: #59655d;
+  background: white;
+  border: 1px solid #e6ebe5;
+  padding: 6px 10px;
+  border-radius: 4px;
+}
+
+/* EXPERIENCE */
+
+.timeline {
+  max-width: 790px;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 145px 1fr;
+  gap: 24px;
+  padding-bottom: 31px;
+}
+
+.timeline-date {
+  font-size: 10px;
+  color: #8b938c;
+}
+
+.timeline-content {
+  padding-left: 27px;
+  border-left: 1px solid #dce5dd;
+}
+
+.timeline-content h3 {
+  font: 600 18px var(--serif);
+  margin-bottom: 5px;
+}
+
+.meta {
+  font-size: 11px;
+  color: var(--green);
+  margin-bottom: 9px;
+}
+
+.timeline-content p,
+.bullet-list {
+  font-size: 12px;
+  color: #747b74;
+}
+
+.bullet-list {
+  padding-left: 17px;
+  margin-top: 10px;
+}
+
+.bullet-list li {
+  margin: 4px 0;
+}
+
+/* EDUCATION */
+
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 13px;
+}
+
+.edu-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.year {
+  font-size: 9px;
+  color: var(--green);
+  letter-spacing: 1px;
+  margin-bottom: 13px;
+}
+
+.edu-card h3 {
+  font: 600 17px var(--serif);
+  margin-bottom: 6px;
+}
+
+.edu-card p {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* CONTACT */
+
+.contact-panel {
+  background: var(--ink);
+  color: white;
+  border-radius: 12px;
+  padding: 38px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.contact-panel .section-kicker {
+  color: #a8c9b3;
+}
+
+.contact-panel p {
+  font-size: 12px;
+  color: #b7bdb8;
+  margin-top: 14px;
+}
+
+.contact-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.contact-link {
+  background: #ffffff12;
+  border: 1px solid #ffffff20;
+  border-radius: 6px;
+  padding: 13px 14px;
+  transition: .3s;
+}
+
+.contact-link:hover {
+  background: #ffffff25;
+}
+
+.contact-link small {
+  display: block;
+  color: #aeb8b0;
+  font-size: 9px;
+}
+
+.contact-link span {
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 0;
+  color: #999f98;
+  font-size: 9px;
+}
+
+/* ANIMATION */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: .7s;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVE DESIGN */
+
+@media(max-width:1000px) {
+  .layout {
+    grid-template-columns: 165px 1fr;
+    gap: 34px;
+    padding: 0 26px;
+  }
+
+  .hero {
+    min-height: 590px;
+  }
+
+  .portrait-frame {
+    height: 365px;
+  }
+}
+
+@media(max-width:760px) {
+  .layout {
+    display: block;
+    padding: 0 22px;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .mobile-top {
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    background: rgba(248,248,245,.95);
+    backdrop-filter: blur(12px);
+    z-index: 20;
+  }
+
+  .mobile-top .brand {
+    margin: 0;
+  }
+
+  .menu-toggle {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--line);
+    background: white;
+    border-radius: 7px;
+    cursor: pointer;
+  }
+
+  .mobile-nav {
+    display: none;
+    position: fixed;
+    z-index: 19;
+    top: 68px;
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    padding: 15px 22px;
+    border-bottom: 1px solid var(--line);
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+  }
+
+  .mobile-nav.open {
+    display: grid;
+  }
+
+  .mobile-nav a {
+    padding: 10px;
+    font-size: 12px;
+    border-radius: 6px;
+  }
+
+  .mobile-nav a:hover {
+    background: var(--mint);
+  }
+
+  .hero {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    padding: 55px 0 65px;
+    gap: 38px;
+  }
+
+  .portrait-wrap {
+    justify-self: center;
+    width: 78%;
+    margin-bottom: 12px;
+  }
+
+  .portrait-frame {
+    height: 390px;
+  }
+
+  .section {
+    padding: 58px 0;
+  }
+
+  .section-head {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .intro-grid,
+  .skills-wrap,
+  .contact-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .cards,
+  .education-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    min-height: 150px;
+  }
+}
+
+@media(max-width:420px) {
+  .layout {
+    padding: 0 17px;
+  }
+
+  h1 {
+    font-size: 43px;
+  }
+
+  .portrait-frame {
+    height: 340px;
+  }
+
+  .timeline-item {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+
+  .contact-panel {
+    padding: 25px 18px;
+  }
+
+  .contact-links {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  html {scroll-behavior:auto}
+  .reveal {opacity:1;transform:none}
+}
+</style>
+</head>
+
+<body>
+
+<div class="layout">
+
+<!-- DESKTOP SIDEBAR -->
+
+<aside class="sidebar">
+
+<a class="brand" href="#home">
+  <span class="brand-mark">TH</span>
+  <span class="brand-name">
+    TANVIR HOSSAIN
+    <span>Personal portfolio</span>
+  </span>
+</a>
+
+<p class="side-label">Navigation</p>
+
+<nav class="nav">
+  <a class="active" href="#home"><span class="num">01</span>Home</a>
+  <a href="#about"><span class="num">02</span>About</a>
+  <a href="#strengths"><span class="num">03</span>Strengths</a>
+  <a href="#skills"><span class="num">04</span>Skills</a>
+  <a href="#experience"><span class="num">05</span>Experience</a>
+  <a href="#education"><span class="num">06</span>Education</a>
+  <a href="#contact"><span class="num">07</span>Contact</a>
+</nav>
+
+<div class="side-bottom">
+  <div class="social-row">
+    <a href="https://www.linkedin.com/in/tanvir-hossain-714341366/" target="_blank">in</a>
+    <a href="mailto:251-15-203@diu.edu.bd">@</a>
+    <a href="tel:+8801763685251">↗</a>
+  </div>
+  <div class="availability">
+    <span class="dot"></span>
+    Based in Dhaka, Bangladesh
+  </div>
+</div>
+
+</aside>
+
+<main>
+
+<!-- MOBILE HEADER -->
+
+<header class="mobile-top">
+  <a class="brand" href="#home">
+    <span class="brand-mark">TH</span>
+    <span class="brand-name">
+      TANVIR HOSSAIN
+      <span>Personal portfolio</span>
+    </span>
+  </a>
+
+  <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+    ☰
+  </button>
+</header>
+
+<nav class="mobile-nav" id="mobileNav">
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#strengths">Strengths</a>
+  <a href="#skills">Skills</a>
+  <a href="#experience">Experience</a>
+  <a href="#education">Education</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- HERO SECTION -->
+
+<section class="hero" id="home">
+
+<div class="hero-content reveal">
+
+<div class="eyebrow">Hello, I'm Tanvir</div>
+
+<h1>
+Tanvir<br>
+<span>Hossain.</span>
+</h1>
+
+<p class="hero-lead">
+Computer Science & Engineering student,
+with a people-first mindset.
+</p>
+
+<p class="hero-copy">
+I enjoy communicating, explaining ideas clearly,
+and helping people feel understood. I'm building
+my skills in technology while bringing patience,
+responsibility, and a willingness to learn to
+every opportunity.
+</p>
+
+<div class="actions">
+<a class="btn btn-dark" href="#contact">Get in touch ↗</a>
+<a class="btn btn-light"
+href="https://www.linkedin.com/in/tanvir-hossain-714341366/"
+target="_blank">View LinkedIn ↗</a>
+</div>
+
+</div>
+
+<div class="portrait-wrap reveal">
+  <div class="portrait-frame">
+    <div class="portrait-inner">
+      <!-- CHANGE YOUR PHOTO HERE -->
+      <img src="profile.jpg" alt="Tanvir Hossain">
+    </div>
+  </div>
+  <div class="portrait-note">
+    “Clear communication. Thoughtful work.”
+  </div>
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="section reveal" id="about">
+
+<div class="section-head">
+  <div>
+    <div class="section-kicker">A little introduction</div>
+    <h2>About me</h2>
+  </div>
+  <p class="section-sub">
+    A curious learner who values clarity,
+    patience, and meaningful communication.
+  </p>
+</div>
+
+<div class="intro-grid">
+
+<div class="intro-text">
+
+<p>
+I'm Tanvir Hossain, a Computer Science &
+Engineering student at Daffodil International
+University in Dhaka, Bangladesh.
+Alongside my studies, I have experience as
+a teaching assistant and tutor at a coaching centre.
+</p>
+
+<p>
+Teaching has helped me become a more patient
+communicator. I enjoy listening carefully,
+understanding what someone needs, and explaining
+information in a clear and supportive way.
+</p>
+
+<p>
+I'm interested in opportunities where I can
+contribute through communication, teamwork,
+and responsible work while continuing to learn
+new tools and processes.
+</p>
+
+</div>
+
+<div class="quote">
+“Good communication starts with listening —
+and grows through clarity.”
+</div>
+
+</div>
+</section>
+
+<!-- STRENGTHS -->
+
+<section class="section reveal" id="strengths">
+
+<div class="section-head">
+  <div>
+    <div class="section-kicker">What I bring</div>
+    <h2>Core strengths</h2>
+  </div>
+  <p class="section-sub">
+    The people skills and habits I bring to a team.
+  </p>
+</div>
+
+<div class="cards">
+
+<article class="card">
+  <span class="card-index">01 / 03</span>
+  <div class="card-icon">✳</div>
+  <h3>Clear communication</h3>
+  <p>
+  Explaining information in a simple,
+  helpful way and communicating comfortably
+  in Bengali.
+  </p>
+</article>
+
+<article class="card">
+  <span class="card-index">02 / 03</span>
+  <div class="card-icon">◌</div>
+  <h3>Patient listening</h3>
+  <p>
+  Listening carefully, understanding questions,
+  and responding with patience and respect.
+  </p>
+</article>
+
+<article class="card">
+  <span class="card-index">03 / 03</span>
+  <div class="card-icon">↗</div>
+  <h3>Reliable learner</h3>
+  <p>
+  Taking responsibility, working with a team,
+  and staying open to learning new processes.
+  </p>
+</article>
+
+</div>
+</section>
+
+<!-- SKILLS -->
+
+<section class="section reveal" id="skills">
+
+<div class="section-head">
+  <div>
+    <div class="section-kicker">My capabilities</div>
+    <h2>Skills & knowledge</h2>
+  </div>
+  <p class="section-sub">
+    A practical mix of communication,
+    people skills, and computer basics.
+  </p>
+</div>
+
+<div class="skills-wrap">
+
+<div>
+
+<div class="skill-group">
+  <div class="skill-title">Communication</div>
+  <div class="tags">
+    <span class="tag">Bengali communication</span>
+    <span class="tag">Verbal communication</span>
+    <span class="tag">Clear explanation</span>
+    <span class="tag">Active listening</span>
+  </div>
+</div>
+
+<div class="skill-group">
+  <div class="skill-title">People & teamwork</div>
+  <div class="tags">
+    <span class="tag">Customer interaction</span>
+    <span class="tag">Patient interaction</span>
+    <span class="tag">Teamwork</span>
+    <span class="tag">Responsibility</span>
+  </div>
+</div>
+
+</div>
+
+<div>
+
+<div class="skill-group">
+  <div class="skill-title">Computer basics</div>
+  <div class="tags">
+    <span class="tag">Basic computer operation</span>
+    <span class="tag">Typing</span>
+  </div>
+</div>
+
+<div class="skill-group">
+  <div class="skill-title">Currently eager to learn</div>
+  <div class="tags">
+    <span class="tag">CRM tools</span>
+    <span class="tag">Data entry</span>
+    <span class="tag">Applicant follow-up</span>
+    <span class="tag">Outbound calling</span>
+  </div>
+</div>
+
+<div class="skill-group">
+  <div class="skill-title">Languages</div>
+  <div class="tags">
+    <span class="tag">Bengali — Native</span>
+    <span class="tag">English — Basic working proficiency</span>
+  </div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- EXPERIENCE -->
+
+<section class="section reveal" id="experience">
+
+<div class="section-head">
+  <div>
+    <div class="section-kicker">Where I've contributed</div>
+    <h2>Experience</h2>
+  </div>
+  <p class="section-sub">
+    Practical experience built through teaching
+    and daily interaction.
+  </p>
+</div>
+
+<div class="timeline">
+
+<article class="timeline-item">
+
+<div class="timeline-date">Relevant experience</div>
+
+<div class="timeline-content">
+
+<h3>Teaching Assistant / Tutor</h3>
+
+<div class="meta">Coaching Centre</div>
+
+<p>
+Supported students by explaining lessons,
+answering questions, and maintaining a patient
+and encouraging learning environment.
+</p>
+
+<ul class="bullet-list">
+<li>Explained lessons and concepts clearly.</li>
+<li>Used active listening to understand questions.</li>
+<li>Maintained supportive, professional relationships.</li>
+<li>Handled teaching responsibilities reliably.</li>
+</ul>
+
+</div>
+</article>
+</div>
+</section>
+
+<!-- EDUCATION -->
+
+<section class="section reveal" id="education">
+
+<div class="section-head">
+  <div>
+    <div class="section-kicker">Learning journey</div>
+    <h2>Education</h2>
+  </div>
+  <p class="section-sub">My academic background.</p>
+</div>
+
+<div class="education-grid">
+
+<article class="edu-card">
+  <div class="year">Currently studying · 2nd year</div>
+  <h3>BSc in Computer Science & Engineering</h3>
+  <p>Daffodil International University</p>
+</article>
+
+<article class="edu-card">
+  <div class="year">Completed</div>
+  <h3>Higher Secondary Certificate</h3>
+  <p>HSC · GPA 5.00</p>
+</article>
+
+<article class="edu-card">
+  <div class="year">Completed</div>
+  <h3>Secondary School Certificate</h3>
+  <p>SSC · GPA 5.00</p>
+</article>
+
+</div>
+</section>
+
+<!-- CONTACT -->
+
+<section class="section reveal" id="contact">
+
+<div class="contact-panel">
+
+<div>
+  <div class="section-kicker">Let's connect</div>
+  <h2>Have an opportunity or a question?</h2>
+  <p>
+  I'd be glad to hear from you.
+  Reach out through any of the channels here.
+  </p>
+</div>
+
+<div class="contact-links">
+
+<a class="contact-link"
+href="mailto:251-15-203@diu.edu.bd">
+<small>Email</small>
+<span>251-15-203@diu.edu.bd ↗</span>
+</a>
+
+<a class="contact-link"
+href="tel:+8801763685251">
+<small>Phone</small>
+<span>+880 1763-685251 ↗</span>
+</a>
+
+<a class="contact-link"
+href="https://www.linkedin.com/in/tanvir-hossain-714341366/"
+target="_blank">
+<small>LinkedIn</small>
+<span>Connect with me ↗</span>
+</a>
+
+<a class="contact-link"
+href="https://maps.google.com/?q=Mirpur-2,Dhaka,Bangladesh"
+target="_blank">
+<small>Location</small>
+<span>Mirpur-2, Dhaka, Bangladesh ↗</span>
+</a>
+
+</div>
+</div>
+</section>
+
+<footer>
+<span>© <span id="year"></span> Tanvir Hossain</span>
+<span>Designed with clarity & care.</span>
+<a href="#home">↑ Back to top</a>
+</footer>
+
+</main>
+</div>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+// Hamburger menu
+
+const toggle = document.getElementById("menuToggle");
+const mobileNav = document.getElementById("mobileNav");
+
+toggle.addEventListener("click", () => {
+  const open = mobileNav.classList.toggle("open");
+
+  toggle.setAttribute("aria-expanded", String(open));
+  toggle.textContent = open ? "✕" : "☰";
+});
+
+// Close menu after clicking a link
+
+mobileNav.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    mobileNav.classList.remove("open");
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.textContent = "☰";
+  });
+});
+
+// Current year
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+// Scroll reveal animation
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.12
+});
+
+document.querySelectorAll(".reveal").forEach(element => {
+  observer.observe(element);
+});
+
+// Active navigation
+
+const sections = document.querySelectorAll("main section[id]");
+const navLinks = document.querySelectorAll(".nav a");
+
+const activeObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(link => {
+        link.classList.toggle(
+          "active",
+          link.getAttribute("href") === "#" + entry.target.id
+        );
+      });
+    }
+  });
+}, {
+  rootMargin: "-35% 0px -55% 0px"
+});
+
+sections.forEach(section => {
+  activeObserver.observe(section);
+});
+
+</script>
+
+</body>
+</html>
